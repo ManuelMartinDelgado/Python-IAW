@@ -8,7 +8,7 @@ contrasena_correcta = "123"
 while True:
     contrasena_ingresada = input("Ingrese la contraseña: ")
     if contrasena_ingresada == contrasena_correcta:
-        print("¡Contraseña correcta! Acceso concedido.")
+        print("Acceso concedido.")
         break
     else:
-        print("Contraseña incorrecta. Inténtelo de nuevo.")
+        print("Inténtelo de nuevo.")
