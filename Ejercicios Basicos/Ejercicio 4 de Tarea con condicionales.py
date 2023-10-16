@@ -12,3 +12,13 @@ elif(Num2>Num1 and Num2>Num3):
     
 else:
     print("El número mayor es ", Num3)
+    
+
+#if (num1>=num2):
+    #max(num1)
+#else:
+    #max=num2
+#if (num3>=max)
+    #max=num3
+    
+#print ("El mayor numero intraducido es: ", max)

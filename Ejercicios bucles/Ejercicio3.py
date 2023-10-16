@@ -15,25 +15,3 @@ else:
             impares += str(i)
 
     print("Nœmeros impares desde 1 hasta", numero, ":", impares)
-
-    
-    
-# Pedir al usuario un nœmero entero positivo
-numero = int(input("Ingrese un nœmero entero positivo: "))
-
-# Validar si el nœmero ingresado es positivo
-if numero <= 0:
-    print("Por favor, ingrese un nœmero entero positivo.")
-else:
-    # Inicializar una cadena vac’a para almacenar los nœmeros impares
-    impares = ""
-
-    # Iterar desde 1 hasta el nœmero ingresado (inclusive)
-    for i in range(1, numero + 1):
-        if i % 2 != 0:  # Si el nœmero es impar
-            if impares:  # Agregar una coma si ya hay nœmeros impares en la cadena
-                impares += ", "
-            impares += str(i)  # Agregar el nœmero impar a la cadena
-
-    # Mostrar la cadena de nœmeros impares
-    print("Nœmeros impares desde 1 hasta", numero, ":", impares)
