@@ -3,12 +3,14 @@
 #variable, pregunte al usuario por la contrase√±a hasta que introduzca la contrase√±a 
 #correcta.
 
-contrasena_correcta = "123"
+contra= 1234
+contra_pedida=int(input("Ingresa una contraseña PIN: "))
+pin_correcto=False;
 
-while True:
-    contrasena_ingresada = input("Ingrese la contraseña: ")
-    if contrasena_ingresada == contrasena_correcta:
-        print("Acceso concedido.")
-        break
+while (not pin_correcto):
+    if contra==contra_pedida:
+        pin_correcto=True
+        print("Contraseña correcta, bienvenid@")
     else:
-        print("Inténtelo de nuevo.")
+        print("Contraseña incorrecta")
+        contra_pedida=int(input("Ingresa una contraseña PIN: "))
