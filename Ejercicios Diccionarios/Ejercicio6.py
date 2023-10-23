@@ -5,3 +5,18 @@
 # # que se le pida al usuario. Cada vez que se añada un nuevo dato debe imprimirse el 
 # # contenido del diccionario.
 # =============================================================================
+
+informacion_persona = {}
+
+
+claves = ['nombre', 'edad', 'sexo', 'teléfono', 'correo electrónico']
+
+for clave in claves:
+   
+    valor = input(f'Por favor, ingresa el {clave} de la persona: ')
+    
+    informacion_persona[clave] = valor
+    
+    print('Información actual de la persona:')
+    for key, value in informacion_persona.items():
+        print(f'{key}: {value}')

@@ -8,3 +8,31 @@
 # diccionario debe dejarla sin traducir.
 # 
 # =============================================================================
+
+
+
+diccionario = {}
+entrada = input("Ingresa las palabras en español e inglés separadas por dos puntos (:) y separadas por comas (,): ")
+
+
+pares = entrada.split(',')
+
+for par in pares:
+    palabra, traduccion = par.split(':')
+    diccionario[palabra.strip()] = traduccion.strip()
+
+
+frase_espanol = input("Ingresa una frase en español: ")
+
+
+palabras = frase_espanol.split()
+
+frase_traducida = []
+
+for palabra in palabras:
+    traduccion = diccionario.get(palabra, palabra) 
+    frase_traducida.append(traduccion)
+
+
+frase_traducida = ' '.join(frase_traducida)
+print("Frase traducida al inglés:", frase_traducida)

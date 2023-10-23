@@ -13,9 +13,7 @@ t=input("Escribe tú tlfn:")
 
 diccionario={"nombre": n,'edad': e ,'direccion': d, "tlfn": t}
 
-
-
-print(diccionario.get(n))
+print(f"{diccionario['nombre']} tiene {diccionario['edad']} años, vive en {diccionario['direccion']} y su número de teléfono es {diccionario['tlfn']}.")
 
 
 

@@ -6,3 +6,15 @@
 # donde <asignatura> es cada una de las asignaturas del curso, y <créditos> son sus 
 # créditos. Al final debe mostrar también el número total de créditos del curso.
 # =============================================================================
+
+
+
+creditos = {'Matemáticas': 6, 'Física': 4, 'Química': 5}
+
+total = 0
+
+for asignatura, creditos in creditos.items():
+    print(f"{asignatura} tiene {creditos} créditos")
+    total += creditos
+
+print(f"El número total de créditos del curso es: {total}")
