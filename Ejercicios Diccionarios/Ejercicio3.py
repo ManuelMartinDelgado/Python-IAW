@@ -19,11 +19,7 @@ n=input("Elige una fruta: ")
 k=int(input("Cuantos kilos quiere: "))
 
 if n=="Plátano" or n=="Manzana" or n=="Pera" or n=="Naranja":
-    cuenta=k*diccionario.get("Plátano") 
-    cuenta=k*diccionario.get("Manzana") 
-    cuenta=k*diccionario.get("Pera") 
-    cuenta=k*diccionario.get("Naranja")
-    
+    cuenta=k*diccionario.get(n) 
     print("Precio de la compra: ", cuenta)
     
 else:

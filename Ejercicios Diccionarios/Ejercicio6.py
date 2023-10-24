@@ -6,17 +6,28 @@
 # # contenido del diccionario.
 # =============================================================================
 
-informacion_persona = {}
+# =============================================================================
+# informacion_persona = {}
+# 
+# 
+# claves = ['nombre', 'edad', 'sexo', 'teléfono', 'correo electrónico']
+# 
+# for clave in claves:
+#    
+#     valor = input(f'Por favor, ingresa el {clave} de la persona: ')
+#     
+#     informacion_persona[clave] = valor
+#     
+#     print('Información actual de la persona:')
+#     for key, value in informacion_persona.items():
+#         print(f'{key}: {value}')
+# =============================================================================
 
 
-claves = ['nombre', 'edad', 'sexo', 'teléfono', 'correo electrónico']
 
-for clave in claves:
-   
-    valor = input(f'Por favor, ingresa el {clave} de la persona: ')
-    
-    informacion_persona[clave] = valor
-    
-    print('Información actual de la persona:')
-    for key, value in informacion_persona.items():
-        print(f'{key}: {value}')
+personas={}
+continuar=True
+while continuar:
+    clave=input(Q'ue datos quieres inroducir'')
+    valor=input(clave + ':')
+    persona[clave]=
