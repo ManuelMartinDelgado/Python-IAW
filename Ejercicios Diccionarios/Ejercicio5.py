@@ -18,3 +18,16 @@ for asignatura, creditos in creditos.items():
     total += creditos
 
 print(f"El número total de créditos del curso es: {total}")
+
+
+
+
+creditos = {'Matemáticas': 6, 'Física': 4, 'Química': 5}
+
+total = 0
+
+for asignatura in creditos:
+    print(f"{asignatura} tiene {creditos[asignatura]} créditos")
+    total += creditos.get(asignatura)
+
+print(f"El número total de créditos del curso es: {total}")

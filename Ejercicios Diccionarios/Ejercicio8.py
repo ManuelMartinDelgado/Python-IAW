@@ -11,42 +11,38 @@
 
 
 
-diccionario = {}
-entrada = input("Ingresa las palabras en español e inglés separadas por dos puntos (:) y separadas por comas (,): ")
+# =============================================================================
+# diccionario = {}
+# entrada = input("Ingresa las palabras en español e inglés separadas por dos puntos (:) y separadas por comas (,): ")
+# pares = entrada.split(',')
+# for par in pares:
+#     palabra, traduccion = par.split(':')
+#     diccionario[palabra.strip()] = traduccion.strip()
+# frase_espanol = input("Ingresa una frase en español: ")
+# palabras = frase_espanol.split()
+# frase_traducida = []
+# for palabra in palabras:
+#     traduccion = diccionario.get(palabra, palabra) 
+#     frase_traducida.append(traduccion)
+# frase_traducida = ' '.join(frase_traducida)
+# print("Frase traducida al inglés:", frase_traducida)
+# =============================================================================
 
-
-pares = entrada.split(',')
-
-for par in pares:
-    palabra, traduccion = par.split(':')
-    diccionario[palabra.strip()] = traduccion.strip()
-
-
-frase_espanol = input("Ingresa una frase en español: ")
-
-
-palabras = frase_espanol.split()
-
-frase_traducida = []
-
-for palabra in palabras:
-    traduccion = diccionario.get(palabra, palabra) 
-    frase_traducida.append(traduccion)
-
-
-frase_traducida = ' '.join(frase_traducida)
-print("Frase traducida al inglés:", frase_traducida)
 
 
 
 diccionario = {}
+
 palabras = input("Introduce la lista de palabras y traducciones en formato palabra:traducción separadas por comas: ")
+
 for i in palabras.split(','):
     clave, valor = i.split(':')
     diccionario[clave] = valor
 frase = input('Introduce una frase en español: ')
-for i in frase.split():
-    if i in diccionario:
-        print(diccionario[i], end=' ')
+
+for palabra in frase.split():
+    if palabra in diccionario:
+        print(diccionario[palabra], end=' ')
     else:
         print(i, end=' ')
+
