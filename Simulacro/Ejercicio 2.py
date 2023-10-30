@@ -6,20 +6,93 @@
 
 lista=[]
 
-mayor= ""
-
-continuar = True
-
-
+continuar= True
 
 while continuar:
-    
-    palabra=input("¿Que palabra quieres añadir?: ")
+    palabra=input("Escribe una palabra: ")
     lista.append(palabra)
-    continuar=input('¿Quieres seguir añadiendo palabras?: Si/No: ') == "Si"
-    print(lista)
+    continuar= input("quieres añadir otra palabra? si/no: ") == "si"    
 
-palabra_mayor= max(lista, key=len)
+
+mayor=0
+palabraMayor=""
+
+for r in lista:
+    if (len(r) > mayor):
+        mayor = len(r)
+        palabraMayor=r
     
     
-print("La palabra más larga es: ", palabra_mayor)
+print(r)
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# =============================================================================
+# lista=[]
+# 
+# mayor= ""
+# 
+# continuar = True
+# 
+# 
+# 
+# while continuar:
+#     
+#     palabra=input("¿Que palabra quieres añadir?: ")
+#     lista.append(palabra)
+#     continuar=input('¿Quieres seguir añadiendo palabras?: Si/No: ') == "Si"
+#     print(lista)
+# 
+# palabra_mayor= max(lista, key=len)
+#     
+#     
+# print("La palabra más larga es: ", palabra_mayor)
+# =============================================================================

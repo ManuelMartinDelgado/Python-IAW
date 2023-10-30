@@ -7,7 +7,7 @@
 
 
 n=input("Escribe tú nombre: ")
-e=input("Escribe tú edad: ")
+e=int(input("Escribe tú edad: "))
 d=input("Escribe tú dirección:")
 t=input("Escribe tú tlfn:")
 
