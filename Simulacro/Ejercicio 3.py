@@ -21,13 +21,9 @@ while continuar:
 n=int(input('numero entero: '))
 
 for x in lista:
-    if (len(x) > n): 
-        
+    if (len(x) > n):         
         
         print(f"la {x} es mayor a {n}")
-    else:
-        print("no es mayor")
-
 
 
 
