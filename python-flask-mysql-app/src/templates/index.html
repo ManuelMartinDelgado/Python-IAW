@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <h1 class="text-center mt-5 mb-5 text-primary">Rocket League Formulario</h1>
+    <h1 class="text-center mt-5 mb-5 text-primary">Python-Flask-MySQL</h1>
 
     <div class="container">
         <div class="card shadow">
@@ -19,16 +19,16 @@
                 <form action="/user" method="POST">
                     <div class="row mb-3">
                         <div class="col">
-                            <label>Usuario</label>
-                            <input type="text" class="form-control mb-3" name="usuario">
+                            <label>Username</label>
+                            <input type="text" class="form-control mb-3" name="username">
                         </div>
                         <div class="col">
-                            <label>Coche Favorito</label>
-                            <input type="text" class="form-control mb-3" name="coche">
+                            <label>Name</label>
+                            <input type="text" class="form-control mb-3" name="name">
                         </div>
                         <div class="col">
-                            <label>Mayor Rango</label>
-                            <input type="text" class="form-control mb-3" name="rango">
+                            <label>Password</label>
+                            <input type="text" class="form-control mb-3" name="password">
                         </div>
                         <div class="col">
                             <button class="btn btn-primary mb-3 mt-4" type="submit">Save</button>
@@ -44,9 +44,9 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Usuario</th>
-                            <th scope="col">Coche</th>
-                            <th scope="col">Rango</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Password</th>
                             <th scope="col">Edit</th>
                             <th scope="col">Delete</th>
                         </tr>
@@ -56,9 +56,9 @@
                     {% for d in data %}
                         <tr>
                             <td>{{d.id}}</td>
-                            <td>{{d.usuario}}</td>
-                            <td>{{d.coche}}</td>
-                            <td>{{d.rango}}</td>
+                            <td>{{d.username}}</td>
+                            <td>{{d.name}}</td>
+                            <td>{{d.password}}</td>
                             <td><button class="btn btn-primary btn-sm" id="btn-edit{{d.id}}" data-bs-toggle="modal" data-bs-target="#modal{{d.id}}">Edit</button></td>
                             <td><a href="{{url_for('delete', id=d.id)}}" class="btn btn-danger btn-sm">Delete</a></td>
                         </tr>
@@ -74,12 +74,12 @@
                                 </div>
                                 <div class="modal-body">
                                     <form action="/edit/{{d.id}}" method="post">
-                                        <label>Usuario</label>
-                                        <input type="text" class="form-control mb-3" name="usuario" value="{{d.usuario}}">
-                                        <label>Coche</label>
-                                        <input type="text" class="form-control mb-3" name="coche" value="{{d.coche}}">
-                                        <label>Rango</label>
-                                        <input type="text" class="form-control mb-3" name="rango" value="{{d.rango}}">
+                                        <label>Username</label>
+                                        <input type="text" class="form-control mb-3" name="username" value="{{d.username}}">
+                                        <label>Name</label>
+                                        <input type="text" class="form-control mb-3" name="name" value="{{d.name}}">
+                                        <label>Password</label>
+                                        <input type="text" class="form-control mb-3" name="password" value="{{d.password}}">
                                   
                                 </div>
                                 <div class="modal-footer">

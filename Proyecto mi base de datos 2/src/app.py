@@ -11,7 +11,7 @@ app = Flask(__name__, template_folder = template_dir)
 @app.route('/')
 def home():
     cursor = db.database.cursor()
-    cursor.execute("SELECT * FROM users")
+    cursor.execute("SELECT * FROM info")
     myresult = cursor.fetchall()
     #Convertir los datos a diccionario
     insertObject = []
@@ -24,14 +24,14 @@ def home():
 #Ruta para guardar usuarios en la bdd
 @app.route('/user', methods=['POST'])
 def addUser():
-    username = request.form['username']
-    name = request.form['name']
-    password = request.form['password']
+    usuario = request.form['usuario']
+    coche = request.form['coche']
+    rango = request.form['rango']
 
-    if username and name and password:
+    if usuario and coche and rango:
         cursor = db.database.cursor()
-        sql = "INSERT INTO users (username, name, password) VALUES (%s, %s, %s)"
-        data = (username, name, password)
+        sql = "INSERT INTO info (usuario, coche, rango) VALUES (%s, %s, %s)"
+        data = (usuario, coche, rango)
         cursor.execute(sql, data)
         db.database.commit()
     return redirect(url_for('home'))
@@ -39,7 +39,7 @@ def addUser():
 @app.route('/delete/<string:id>')
 def delete(id):
     cursor = db.database.cursor()
-    sql = "DELETE FROM users WHERE id=%s"
+    sql = "DELETE FROM info WHERE id=%s"
     data = (id,)
     cursor.execute(sql, data)
     db.database.commit()
@@ -47,14 +47,14 @@ def delete(id):
 
 @app.route('/edit/<string:id>', methods=['POST'])
 def edit(id):
-    username = request.form['username']
-    name = request.form['name']
-    password = request.form['password']
+    usuario = request.form['usuario']
+    coche = request.form['coche']
+    rango = request.form['rango']
 
-    if username and name and password:
+    if usuario and coche and rango:
         cursor = db.database.cursor()
-        sql = "UPDATE users SET username = %s, name = %s, password = %s WHERE id = %s"
-        data = (username, name, password, id)
+        sql = "UPDATE info SET usuario = %s, coche = %s, rango = %s WHERE id = %s"
+        data = (usuario, coche, rango, id)
         cursor.execute(sql, data)
         db.database.commit()
     return redirect(url_for('home'))
