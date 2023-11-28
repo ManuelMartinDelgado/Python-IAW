@@ -19,7 +19,7 @@ def home():
     for record in myresult:
         insertObject.append(dict(zip(columnNames, record)))
     cursor.close()
-    return render_template('index.html', data=insertObject)
+    return render_template('login.html', data=insertObject)
 
 #Ruta para guardar usuarios en la bdd
 @app.route('/user', methods=['POST'])
