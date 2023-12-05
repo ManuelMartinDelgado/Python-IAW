@@ -19,19 +19,20 @@ def home():
     for record in myresult:
         insertObject.append(dict(zip(columnNames, record)))
     cursor.close()
-    return render_template('login.html', data=insertObject)
+    return render_template('index.html', data=insertObject)
 
 #Ruta para guardar usuarios en la bdd
 @app.route('/user', methods=['POST'])
 def addUser():
+    nombre = request.form['nombre']
     usuario = request.form['usuario']
     coche = request.form['coche']
     rango = request.form['rango']
 
-    if usuario and coche and rango:
+    if  nombre and usuario and coche and rango :
         cursor = db.database.cursor()
-        sql = "INSERT INTO info (usuario, coche, rango) VALUES (%s, %s, %s)"
-        data = (usuario, coche, rango)
+        sql = "INSERT INTO info (nombre,usuario, coche, rango) VALUES (%s, %s, %s, %s)"
+        data = (nombre, usuario, coche, rango)
         cursor.execute(sql, data)
         db.database.commit()
     return redirect(url_for('home'))
@@ -47,14 +48,15 @@ def delete(id):
 
 @app.route('/edit/<string:id>', methods=['POST'])
 def edit(id):
+    nombre = request.form['nombre']
     usuario = request.form['usuario']
     coche = request.form['coche']
     rango = request.form['rango']
 
-    if usuario and coche and rango:
+    if nombre and usuario and coche and rango:
         cursor = db.database.cursor()
-        sql = "UPDATE info SET usuario = %s, coche = %s, rango = %s WHERE id = %s"
-        data = (usuario, coche, rango, id)
+        sql = "UPDATE info SET nombre = %s, usuario = %s, coche = %s, rango = %s WHERE id = %s"
+        data = (nombre, usuario, coche, rango, id)
         cursor.execute(sql, data)
         db.database.commit()
     return redirect(url_for('home'))
