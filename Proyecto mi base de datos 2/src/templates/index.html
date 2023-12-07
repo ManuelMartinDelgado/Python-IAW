@@ -19,6 +19,10 @@
                 <form action="/user" method="POST">
                     <div class="row mb-3">
                         <div class="col">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control mb-3" name="nombre">
+                        </div>
+                        <div class="col">
                             <label>Usuario</label>
                             <input type="text" class="form-control mb-3" name="usuario">
                         </div>
@@ -44,6 +48,7 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
                             <th scope="col">Usuario</th>
                             <th scope="col">Coche</th>
                             <th scope="col">Rango</th>
@@ -56,6 +61,7 @@
                     {% for d in data %}
                         <tr>
                             <td>{{d.id}}</td>
+                            <td>{{d.nombre}}</td>
                             <td>{{d.usuario}}</td>
                             <td>{{d.coche}}</td>
                             <td>{{d.rango}}</td>
@@ -74,6 +80,8 @@
                                 </div>
                                 <div class="modal-body">
                                     <form action="/edit/{{d.id}}" method="post">
+                                        <label>Nombre</label>
+                                        <input type="text" class="form-control mb-3" name="nombre" value="{{d.nombre}}">
                                         <label>Usuario</label>
                                         <input type="text" class="form-control mb-3" name="usuario" value="{{d.usuario}}">
                                         <label>Coche</label>

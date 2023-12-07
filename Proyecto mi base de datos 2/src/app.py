@@ -21,6 +21,8 @@ def home():
     cursor.close()
     return render_template('index.html', data=insertObject)
 
+
+
 #Ruta para guardar usuarios en la bdd
 @app.route('/user', methods=['POST'])
 def addUser():
@@ -61,5 +63,7 @@ def edit(id):
         db.database.commit()
     return redirect(url_for('home'))
 
+
+    
 if __name__ == '__main__':
     app.run(debug=True, port=4000)
