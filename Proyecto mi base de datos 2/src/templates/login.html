@@ -15,14 +15,14 @@
         <div class="container-fluid row m-0 vh-100 justify-content-center align-items-center">
             <div class="card shadow w-50">
                 <div class="card-body">
-                    <form action="/login" method="post">
+                    <form action="/login" method="POST">
                         <h3 class="text-center">Inicia sesión!!!</h3>
 
                         <label>Email</label>
-                        <input type="email" placeholder="Escribe aqui tu email" class="form-control mb-3" name="email">
+                        <input type="text"  class="form-control mb-3" name="email">
 
                         <label>Contraseña</label>
-                        <input type="password" placeholder="Escribe aqui tu contraseña"class="form-control mb-3" name="contraseña">
+                        <input type="password" class="form-control mb-3" name="contraseña">
 
                         {% if message %}
 
@@ -37,6 +37,10 @@
                         
                         
 
+                    </form>
+                </br>
+                    <form action="/" method="GET">
+                        <button type="submit" class="btn btn-primary w-100" a href="{{url_for('home')}}" >¿Aún no tienes cuenta?</button>
                     </form>
                 </div>
             </div>

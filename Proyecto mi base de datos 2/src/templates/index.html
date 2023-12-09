@@ -13,7 +13,7 @@
     <h1 class="text-center mt-5 mb-5 text-primary">Rocket League Formulario</h1>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <span>Bienvenido/a {{session['name']}} {{session['surnames']}}<a href="{{url_for('logout')}}" class="mx-3">Salir</a></span>
+            <span>Bienvenido/a {{session['nombre']}} {{session['apellido']}}<a href="{{url_for('logout')}}" class="mx-3">Salir</a></span>
         </div>
     </nav>
     <div class="container">
@@ -30,8 +30,12 @@
                             <input type="text" class="form-control mb-3" name="coche">
                         </div>
                         <div class="col">
-                            <label>Mayor Rango</label>
-                            <input type="text" class="form-control mb-3" name="rango">
+                            <label>Mayor Elo</label>
+                            <input type="text" class="form-control mb-3" name="elo">
+                        </div>
+                        <div class="col">
+                            <label>Partidos Jugados</label>
+                            <input type="integrity" class="form-control mb-3" name="partidos">
                         </div>
                         <div class="col">
                             <label>Región</label>
@@ -40,7 +44,16 @@
                         <div class="col">
                             <button class="btn btn-primary mb-3 mt-4" type="submit">Save</button>
                         </div>
+                        {% if message %}
+
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Error</strong>{{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+
+                        {% endif %}
                     </div>
+                    
 
                 </form>
                         
@@ -51,9 +64,10 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Usuario</th>
+                            <th scope="col">Nick</th>
                             <th scope="col">Coche</th>
-                            <th scope="col">Rango</th>
+                            <th scope="col">Elo</th>
+                            <th scope="col">Partidos</th>
                             <th scope="col">Región</th>
                             <th scope="col">Edit</th>
                             <th scope="col">Delete</th>
@@ -64,9 +78,10 @@
                     {% for d in data %}
                         <tr>
                             <td>{{d.id}}</td>
-                            <td>{{d.usuario}}</td>
+                            <td>{{d.nick}}</td>
                             <td>{{d.coche}}</td>
-                            <td>{{d.rango}}</td>
+                            <td>{{d.elo}}</td>
+                            <td>{{d.partidos}}</td>
                             <td>{{d.region}}</td>
                             <td><button class="btn btn-primary btn-sm" id="btn-edit{{d.id}}" data-bs-toggle="modal" data-bs-target="#modal{{d.id}}">Edit</button></td>
                             <td><a href="{{url_for('delete', id=d.id)}}" class="btn btn-danger btn-sm">Delete</a></td>
@@ -78,19 +93,19 @@
                             <div class="modal-dialog">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h1 class="modal-title fs-5" id="exampleModalLabel">{{d.username}}</h1>
+                                  <h1 class="modal-title fs-5" id="exampleModalLabel">{{d.nombre}}</h1>
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <form action="/edit/{{d.id}}" method="post">
-                                        <label>Nombre</label>
-                                        <input type="text" class="form-control mb-3" name="nombre" value="{{d.nombre}}">
-                                        <label>Usuario</label>
-                                        <input type="text" class="form-control mb-3" name="usuario" value="{{d.usuario}}">
+                                        <label>Nick</label>
+                                        <input type="text" class="form-control mb-3" name="nick" value="{{d.nick}}">
                                         <label>Coche</label>
                                         <input type="text" class="form-control mb-3" name="coche" value="{{d.coche}}">
-                                        <label>Rango</label>
-                                        <input type="text" class="form-control mb-3" name="rango" value="{{d.rango}}">
+                                        <label>Elo</label>
+                                        <input type="text" class="form-control mb-3" name="elo" value="{{d.elo}}">
+                                        <label>Partidos Jugados</label>
+                                        <input type="integrity" class="form-control mb-3" name="partidos" value="{{d.partidos}}">
                                         <label>Región</label>
                                         <input type="text" class="form-control mb-3" name="region" value="{{d.region}}">
                                   
